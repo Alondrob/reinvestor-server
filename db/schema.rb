@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_02_152510) do
+ActiveRecord::Schema.define(version: 2022_03_12_184329) do
 
   create_table "properties", force: :cascade do |t|
     t.string "state"
@@ -27,6 +27,20 @@ ActiveRecord::Schema.define(version: 2022_01_02_152510) do
     t.float "lon"
     t.string "image"
     t.string "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.integer "purchase_price"
+    t.integer "monthly_rent"
+    t.integer "annual_rent_appreciation"
+    t.integer "annual_property_taxes"
+    t.integer "annual_vacancy_rate"
+    t.integer "loan_years"
+    t.integer "loan_rate"
+    t.integer "exit_year"
+    t.integer "property_appreciation"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
