@@ -7,8 +7,11 @@ class ReportsController < ApplicationController
 
     def show
         report = Report.find(params[:id]) 
-        loan_report = report.loan_terms(report)
-        render json: loan_report
+        loan_report = report.calculate_data(report)
+         binding.pry
+        income_report = report.income_terms(report)
+        
+        render json: [loan_report, income_report]
     end
 
     def create
