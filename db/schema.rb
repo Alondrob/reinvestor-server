@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_14_181556) do
+ActiveRecord::Schema.define(version: 2022_03_21_180228) do
 
   create_table "properties", force: :cascade do |t|
     t.string "state"
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 2022_03_14_181556) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "annual_property_repairs"
+    t.integer "down_pmt"
+    t.string "address"
   end
 
   create_table "states", force: :cascade do |t|

@@ -7,11 +7,9 @@ class ReportsController < ApplicationController
 
     def show
         report = Report.find(params[:id]) 
-        loan_report = report.calculate_data(report)
-         binding.pry
-        income_report = report.income_terms(report)
         
-        render json: [loan_report, income_report]
+        data_report = report.calculate_data(report) 
+        render json: data_report
     end
 
     def create
@@ -25,10 +23,10 @@ class ReportsController < ApplicationController
 
 
     def report_params
-        params.require(:report).permit(:purchase_price, :monthly_rent,
+        params.require(:report).permit(:address, :purchase_price, :monthly_rent,
                                         :annual_rent_appreciation, :annual_property_taxes, 
                                         :annual_property_repairs, :annual_vacancy_rate,
-                                         :loan_years, :loan_rate,
+                                         :down_pmt, :loan_years, :loan_rate,
                                          :exit_year, :property_appreciation
                                         )
     end
