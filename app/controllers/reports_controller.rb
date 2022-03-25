@@ -6,9 +6,9 @@ class ReportsController < ApplicationController
     end
 
     def show
-        report = Report.find(params[:id]) 
-        
+        report = Report.find(params[:id])     
         data_report = report.calculate_data(report) 
+        
         render json: data_report
     end
 

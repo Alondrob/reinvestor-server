@@ -10,6 +10,7 @@ class CreateReports < ActiveRecord::Migration[6.1]
       t.integer :loan_rate
       t.integer :exit_year
       t.integer :property_appreciation
+      t.references :user
       t.timestamps
     end
   end
