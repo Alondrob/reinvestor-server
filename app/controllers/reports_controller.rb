@@ -13,7 +13,7 @@ class ReportsController < ApplicationController
     end
 
     def create
-        report = Report.create(report_params)
+        report = current_user.reports.create(report_params)
         
         render json: report
     end

@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::API
-
+    before_action :require_login
+    skip_before_action :require_login, only: [:home]
     def encode_token
         JWT.encode(payload, "alon214597&" )
     end
