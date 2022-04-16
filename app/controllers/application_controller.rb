@@ -1,9 +1,14 @@
 class ApplicationController < ActionController::API
-    before_action :require_login
-    skip_before_action :require_login, only: [:home]
-    
+    # before_action :require_login
+    # skip_before_action :require_login, only: [:home]
+    # skip_before_action :verify_autencity_token
+
+    def secret_key
+        "alon214597&"
+    end
+
     def encode_token
-        JWT.encode(payload, "alon214597&" )
+        JWT.encode(payload, secret_key, 'HS256')
     end
 
      def auth_header

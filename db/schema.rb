@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2022_03_21_180228) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "annual_property_repairs"
-    t.integer "down_pmt"
+s    t.integer "down_pmt"
     t.string "address"
     t.index ["user_id"], name: "index_reports_on_user_id"
   end
