@@ -8,10 +8,11 @@ class UsersController < ApplicationController
 
     def create
         user = User.create(user_params)
-         binding.pry
+        #  binding.pry
         if user.save && user.authenticate(user_params[:password])
-            binding.pry
+            # binding.pry
             token = encode_token({user_id: user.id})
+            # binding.pry
             render json: { user: UserSerializer.new(user).serializable_hash, token: token}, status: :created
         else
             render json: {error: user.errors.full_messages.to_sentence}, status: :unprocessable_entity

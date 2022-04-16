@@ -7,8 +7,8 @@ class ApplicationController < ActionController::API
         "alon214597&"
     end
 
-    def encode_token
-        JWT.encode(payload, secret_key, 'HS256')
+    def encode_token(payload)
+         JWT.encode(payload, secret_key, 'HS256')
     end
 
      def auth_header
