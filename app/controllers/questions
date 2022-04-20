@@ -1,0 +1,13 @@
+create user:
+
+When i signup , i create a user that has a secure password - how it's actually uses bcrypt,
+from what i undderstand = first it is instetiate user object and ten checks in the model if it has a secure password it creates
+hashed password
+
+
+
+
+
+"$2a$12$FEHpthY0yoQqyxenv.aQGu4i675kf2U3RH4kTm3DTd3Xdj5nu8jjG"
+
+ "$2a$12$cKOT90zGeW6tDiRowFRvE.O2qtrsXbBwAisoF4tKTXqHN.IOMYYKm"

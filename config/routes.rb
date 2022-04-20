@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :users
   resources :properties
   resources :reports
+  get '/current_user', to: 'current_user#index'
 end
