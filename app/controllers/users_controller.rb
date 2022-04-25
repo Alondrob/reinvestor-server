@@ -19,6 +19,25 @@ class UsersController < ApplicationController
 
     end
 
+    # def login
+    #     binding.pry
+    #     user = User.find_by(params[:email])
+    #     binding.pry
+    #     if user && user.authenticate(params[:password])
+    #         payload = {user_id: user.id}
+    #         token = encode_token(payload)
+    #         render json: {user: user, token: token}
+    #     else
+    #         render json: {error: "User not found"}
+    #     end
+    # end
+
+    def token_authenticate
+        token = request.headers["Authenticate"]
+        user = User.find(decoded_token(token)["user_id"])
+        render json: user
+    end
+
     private 
 
     def user_params
